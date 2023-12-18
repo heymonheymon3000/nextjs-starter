@@ -1,5 +1,5 @@
+import { getLocales } from "@/lib/utils";
 import { Providers } from "@/redux/provider";
-import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
@@ -17,7 +17,7 @@ async function getMessages(locale: string) {
 }
 
 // Can be imported from a shared config
-const locales = ["en"];
+const locales = getLocales();
 
 export default async function LocaleLayout({
   children,

@@ -9,7 +9,7 @@ export default function Home() {
   const dispatch = useAppDispatch();
 
   const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
-
+  
   return (
     <main style={{ maxWidth: 1200, marginInline: "auto", padding: 20 }}>
       <div style={{ marginBottom: "4rem", textAlign: "center" }}>
