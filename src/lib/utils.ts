@@ -1,4 +1,4 @@
 export const getLocales = () => {
-    return ["en"]
+    return ["en", "es"]
 }
 
