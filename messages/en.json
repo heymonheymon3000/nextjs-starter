@@ -1,5 +1,9 @@
 {
   "Index": {
-    "title": "Hello world!"
+    "increment": "increment",
+    "decrement": "decrement",
+    "reset": "reset",
+    "loading": "Loading",
+    "error_message": "Oh no, there was an error"
   }
 }

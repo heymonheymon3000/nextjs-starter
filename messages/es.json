@@ -1,5 +1,9 @@
 {
-    "Index": {
-      "title": "Hola Mundo!"
-    }
+  "Index": {
+    "increment": "incremento",
+    "decrement": "decremento",
+    "reset": "reiniciar",
+    "loading": "Cargando",
+    "error_message": "Oh no, hubo un error"
   }
+}

@@ -11,42 +11,38 @@ export default function Home() {
 
   const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
   const t = useTranslations('Index');
+
   return (
-    <main style={{ maxWidth: 1200, marginInline: "auto", padding: 20 }}>
-      <h1>{t('title')}</h1>
-      <div style={{ marginBottom: "4rem", textAlign: "center" }}>
-        <h4 style={{ marginBottom: 16 }}>{count}</h4>
-        <button onClick={() => dispatch(increment())}>increment</button>
+    <main className="p-[20px] max-w-[1200px] ms-auto me-auto">
+      <div className="mb-16 text-center">
+        <h4 className="mb-4">{count}</h4>
+        <button onClick={() => dispatch(increment())}>{t('increment')}&nbsp;</button>
         <button
           onClick={() => dispatch(decrement())}
-          style={{ marginInline: 16 }}
+          className="ms-auto me-auto"
         >
-          decrement
+          {t('decrement')}&nbsp;
         </button>
-        <button onClick={() => dispatch(reset())}>reset</button>
+        <button onClick={() => dispatch(reset())}>{t('reset')}&nbsp;</button>
       </div>
 
       {error ? (
-        <p>Oh no, there was an error</p>
+        <p>{t('error_message')}&nbsp;</p>
       ) : isLoading || isFetching ? (
-        <p>Loading...</p>
+        <p>{t('loading')}&nbsp;...</p>
       ) : data ? (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr 1fr",
-            gap: 20,
-          }}
+        <div 
+        className="grid grid-cols-[1fr_1fr_1fr_1fr] gap-[20px]"
         >
           {data.map((user) => (
             <div
+              className="text-center border-solid border-[#ccc] border-[1px]"
               key={user.id}
-              style={{ border: "1px solid #ccc", textAlign: "center" }}
             >
               <img
                 src={`https://robohash.org/${user.id}?set=set2&size=180x180`}
                 alt={user.name}
-                style={{ height: 180, width: 180 }}
+                className="h-[180px] w-[180px]"
               />
               <h3>{user.name}</h3>
             </div>
