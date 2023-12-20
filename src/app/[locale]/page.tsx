@@ -6,11 +6,12 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("Index");
+
   const count = useAppSelector((state) => state.counterReducer.value);
   const dispatch = useAppDispatch();
 
   const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
-  const t = useTranslations("Index");
 
   return (
     <main className="p-[20px] max-w-[1200px] ms-auto me-auto">

@@ -11,6 +11,9 @@ export const userApi = createApi({
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com/",
+    headers: {
+      "Content-Type": "application/json",
+    },
   }),
   endpoints: (builder) => ({
     getUsers: builder.query<User[], null>({

@@ -3,6 +3,7 @@ import { Providers } from "@/redux/provider";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import React, { ReactNode } from "react";
+import {unstable_setRequestLocale} from 'next-intl/server';
 
 type Props = {
   children: ReactNode;
@@ -26,6 +27,9 @@ export default async function LocaleLayout({
 }: Props) {
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as any)) notFound();
+  
+  unstable_setRequestLocale(locale);
+ 
   const messages = await getMessages(locale);
   return (
     <html lang={locale}>
